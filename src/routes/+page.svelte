@@ -60,13 +60,13 @@
 				can make it difficult to enforce syntactic constraints or to use the language model as a
 				proposal distribution for search. To address these problems, we propose neural diffusion
 				models that operate on syntax trees of any context-free grammar. Similar to image diffusion
-				models, they invert ``noise'' added to these syntax trees. Rather than generating code
-				sequentially, they iteratively edit it while preserving syntactic validity, which makes it
-				easy to combine this neural model with search. We apply our approach to inverse graphics
-				tasks, where our model learns to convert images into programs that produce those images.
-				Combined with search, our model is thus able to write graphics programs, see the execution
-				result, and debug them to meet the required specification. We additionally show how our
-				system can write graphics programs for hand-drawn sketches.
+				models, they invert <q>noise</q> added to these syntax trees. Rather than generating code sequentially,
+				they iteratively edit it while preserving syntactic validity, which makes it easy to combine
+				this neural model with search. We apply our approach to inverse graphics tasks, where our model
+				learns to convert images into programs that produce those images. Combined with search, our model
+				is thus able to write graphics programs, see the execution result, and debug them to meet the
+				required specification. We additionally show how our system can write graphics programs for hand-drawn
+				sketches.
 			</div>
 		</div>
 	</div>
