@@ -6,7 +6,7 @@
 	export let color = 'black';
 </script>
 
-<button class={'big-button font-sans ' + color + ' ' + $$props.class} on:click>
+<button class={'big-button select-none font-sans ' + color + ' ' + $$props.class} on:click>
 	<div class="button-grid-wrapper">
 		<div class="button-slot-wrapper">
 			<slot></slot>

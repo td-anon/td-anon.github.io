@@ -290,14 +290,6 @@ class CSG2DAtoPath(Transformer):
             y + (x3 - x) * sin_angle + (y3 - y) * cos_angle,
         )
 
-        # path = skia.Path()
-        # path.moveTo(x0, y0)
-        # path.lineTo(x1, y1)
-        # path.lineTo(x2, y2)
-        # path.lineTo(x3, y3)
-        # path.close()
-        # return path
-
         return f"quad {x0} {y0} {x1} {y1} {x2} {y2} {x3} {y3}"
 
     def circle(self, children):
@@ -799,9 +791,17 @@ def sample():
 
 
 def expression_to_ops(expr):
-    return env.compiler.compile(env.grammar.parse(expr))
+    rv = env.compiler.compile(env.grammar.parse(expr))
+
+    if isinstance(rv, str):
+        return [rv]
+    return rv
 
 
 def get_mutated(expr):
     m = random_mutation(expr, env.grammar, sampler)
     return m.apply(expr)
+
+
+def parse_expression(expr):
+    return env.grammar.parse(expr)

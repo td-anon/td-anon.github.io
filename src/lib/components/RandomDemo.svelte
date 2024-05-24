@@ -1,5 +1,6 @@
 <script>
 	import ExpressionPanel from './ExpressionPanel.svelte';
+	import ExpressionCode from './ExpressionCode.svelte';
 	import UiButton from './UIButton.svelte';
 	import UndoIcon from 'virtual:icons/mi/undo';
 	import RewindIcon from 'virtual:icons/mdi/rewind';
@@ -60,13 +61,15 @@
 	{/each}
 </div>
 
-<div class="flex">
-	<div class="border border-black border-solid inline-block">
-		<ExpressionPanel expression={currentExpression} />
+<div class="flex flex-col items-center md:flex-row md:items-start">
+	<div>
+		<div class="border border-black border-solid inline-block">
+			<ExpressionPanel expression={currentExpression} />
+		</div>
 	</div>
 	<div
-		class="font-mono bg-gray-100 ml-4 px-4 py-4 border-2 border-solid border-gray-200 rounded-md"
+		class="font-mono text-base mt-4 md:mt-0 bg-gray-100 md:ml-4 px-4 py-4 border-2 border-solid border-gray-200 rounded-md h-72 w-full overflow-y-scroll md:overflow-y-auto"
 	>
-		{currentExpression}
+		<ExpressionCode expression={currentExpression} />
 	</div>
 </div>
