@@ -34,7 +34,7 @@
 	};
 </script>
 
-<div class="flex flex-row">
+<div class="flex flex-row md:text-lg text-sm">
 	<UiButton on:click={resetExpression} color="black" class="mr-2">
 		<div class="flex items-center">
 			<UndoIcon class="inline-block" />
@@ -53,7 +53,7 @@
 		</div>
 	</UiButton>
 </div>
-<div class="flex flex-row my-4">
+<div class="flex flex-row my-4 overflow-x-clip">
 	{#each expressionStack as expression}
 		<div class="mr-4 border-2 border-blue-300 border-solid rounded-md p-1">
 			<ExpressionPanel size="64" {expression} />
