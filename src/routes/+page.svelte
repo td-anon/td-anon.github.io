@@ -5,7 +5,7 @@
 
 <div class="text-lg">
 	<div class="flex w-full justify-center font-sans items-end bg-black">
-		<div class="mx-8 max-w-3xl w-full text-white pb-12 pt-32">
+		<div class="mx-8 max-w-3xl w-full text-white pb-12 pt-8 md:pt-32">
 			<div
 				class="font-sans uppercase text-xs mb-4 tracking-widest text-gray-300 border-1 border border-solid border-gray-300 inline-block px-2 py-1 rounded-md"
 			>
@@ -31,7 +31,7 @@
 		<div class="mx-8 max-w-3xl w-full">
 			<div class="w-full flex justify-center items-center flex-col">
 				<div class="font-bold text-center text-xl mt-8">Abstract</div>
-				<div class="py-4 mb-8">
+				<div class="py-4 mb-8 text-base">
 					Large language models generate code one token at a time. Their autoregressive generation
 					process lacks the feedback of observing the program's output. Training LLMs to suggest
 					edits directly can be challenging due to the scarcity of rich edit data. To address these
@@ -53,10 +53,29 @@
 		<div class="mx-8 max-w-3xl w-full">
 			<h1 class="mb-8 text-3xl font-bold">What does adding <q>noise</q> mean for programs?</h1>
 			<RandomDemo></RandomDemo>
-			<!-- <div class="mt-4">
+			<div class="mt-4">
 				What you're seeing above is our implementation of how we add random mutations to syntax
-				trees.
-			</div> -->
+				trees. We pick random nodes in the syntax tree and replace them with other nodes of the <i
+					>correct type</i
+				> for the node we're replacing.
+			</div>
+			<!-- <div class="w-full flex justify-center items-center flex-col h-32"></div> -->
+		</div>
+	</div>
+
+	<div class="flex w-full justify-center pt-8 font-sans">
+		<div class="mx-8 max-w-3xl w-full">
+			<h1 class="mb-8 text-3xl font-bold">Tree diffusion lets us use search in program space.</h1>
+
+			<div class="w-full flex items-center justify-center">
+				<video src="/videos/search.mp4" autoplay loop muted width="300"></video>
+			</div>
+
+			<div class="mt-4">
+				Above is a video of our model using search to find the best program to generate given some
+				target image. We're not showing all the nodes here, but it does take the model just a few
+				layers of search to find the correct program.
+			</div>
 			<div class="w-full flex justify-center items-center flex-col h-32"></div>
 		</div>
 	</div>
